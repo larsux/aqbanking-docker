@@ -1,4 +1,6 @@
 # Dockerfile for AqBanking on Debian Squeeze
+Version: 5.99.24beta
+
 
 ### Build
 ```bash
