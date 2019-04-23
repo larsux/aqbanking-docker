@@ -1,4 +1,4 @@
-# AqBanking on Debian Squeeze
+# AqBanking on Debian Stretch
 #
 # https://www.aquamaniac.de/sites/aqbanking
 #
