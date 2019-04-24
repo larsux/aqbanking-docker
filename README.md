@@ -25,5 +25,5 @@ docker run --rm -ti -v "$(pwd)/.aqbanking":/root/.aqbanking aqbanking:latest aqh
 
 # Replace <PIN> with your pin (e.g. 12345)
 docker run --rm -ti -v "$(pwd)/.aqbanking":/root/.aqbanking aqbanking:latest sed -i 's/""/"<PIN>"/' /root/.aqbanking/settings/backends/max
-docker run --rm -ti -v "$(pwd)/.aqbanking":/root/.aqbanking aqbanking:latest aqbanking-cli -n -P .aqbanking/settings/backends/max request -b 20050550 -a 1234567890 --balance
+docker run --rm -ti -v "$(pwd)/.aqbanking":/root/.aqbanking aqbanking:latest aqbanking-cli -n -P /root/.aqbanking/settings/backends/max request -b 20050550 -a 1234567890 --balance
 ```
