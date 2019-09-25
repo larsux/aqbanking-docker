@@ -1,0 +1,24 @@
+# AqBanking on Debian
+#
+# https://www.aquamaniac.de/sites/aqbanking
+#
+# VERSION: 5.8.1
+
+FROM debian:buster
+
+RUN \
+	apt-get update && apt-get -y install build-essential file libgcrypt20-dev pkg-config libgnutls28-dev libxmlsec1-dev curl && \
+	curl https://www.aquamaniac.de/rdm/attachments/download/85/gwenhywfar-4.99.11beta.tar.gz | tar xfz - && \
+	curl https://datapacket.dl.sourceforge.net/project/ktoblzcheck/ktoblzcheck-1.49.tar.gz | tar xfz - && \
+	curl https://www.aquamaniac.de/rdm/attachments/download/105/aqbanking-5.8.1.tar.gz | tar xfz -
+
+WORKDIR /gwenhywfar-4.99.11beta
+RUN ./configure --with-guis '' && make && make install
+
+WORKDIR /ktoblzcheck-1.49
+RUN ./configure && make && make install
+
+WORKDIR /aqbanking-5.8.1
+RUN ./configure && make && make install
+
+WORKDIR /
