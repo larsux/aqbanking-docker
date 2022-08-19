@@ -24,4 +24,6 @@ RUN cmake ../ktoblzcheck-1.53 && make && make install
 WORKDIR /aqbanking-6.5.3
 RUN ./configure && make && make install
 
+RUN ldconfig
+
 WORKDIR /
